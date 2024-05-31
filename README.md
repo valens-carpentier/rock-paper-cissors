@@ -1,1 +1,1 @@
-# rock-paper-cissors
+This is the first game I've created on JS with the Odin Project
