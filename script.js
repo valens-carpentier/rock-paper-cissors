@@ -1,26 +1,55 @@
+function getComputerChoice () {
+    let computerChoice; // Declare the variable computer choice
+    let randomNumber = Math.floor(Math.random()*3);   // Pick a number between 0 and 3 
+    if (randomNumber === 0) {
+        return computerChoice = "Rock"; // If the numer is 0, the conputer choice is rock
+    } else if (randomNumber === 1) {
+        return computerChoice = "Scissor"; // If the number is 1, the computer choice is scissor
+    } else if (randomNumber === 2) {
+        return computerChoice = "Paper"; // If the number is 2, the computer choice is paper
+    }
 
-// Write the logice to get the computer choice
-// Pseudocode
-    // Pick a number between three choices   
-    // If the numer is one, the conputer choice is rock
-    // If the number is two, the computer choice is cissor
-    // If the number is three, the computer choice is paper
+}
 
-// Write the logice to get the user choice
-    // The user enter is input
-    // If the input is paper, cissors or rock, the user choice is attributed to the one he writes
-    // If the input is different to paper, cissors or rock, we ask again the user for an answer
+function getHumanChoice () {
+    let humanChoice;
+    let userInput = prompt("Rock? Paper? Scissor"); // Define the variable asking to the user
+    if (userInput === "Rock") {
+        return humanChoice = "Rock"
+    } else if (userInput === "Scissor") {
+        return humanChoice = "Scissor"
+    } else if (userInput === "Paper") {
+        return humanChoice === "Paper"
+    } else {
+        return getHumanChoice();
+    }
+}
 
 // Create the variable of user and computer scores
+let humanScore = 0;
+let computerScore = 0;
 
 // Write the logic to determine a winner on one hand
-    // The user put his input
-    // The computer is choossing his input randomly
-    // Both players choose Rock: (R, R), no point added
-    // User chooses Rock, Computer chooses Paper: (R, P) - Computer wins
-    // User chooses Rock, Computer chooses Scissors: (R, S) - Users wins
-    // User chooses Paper, Computer chooses Rock: (P, R) - User wins
-    // Both players choose Paper: (P, P) - , no point added
+function playRound (getHumanChoice,getHumanChoice) {
+    if (getComputerChoice === "Rock" & getHumanChoice === "Rock") { // Both players choose Rock: (R, R), no point added
+        return "Tie! No ones wins";
+    } else if (getHumanChoice === "Rock" & getComputerChoice === "Paper") { // User chooses Rock, Computer chooses Paper: (R, P) - Computer wins
+        computerScore = computerScore + 1;
+        return "You lose! Paper beats Rock";
+    } else if (getHumanChoice === "Rock" & getComputerChoice === "Scissor") {  // User chooses Rock, Computer chooses Scissors: (R, S) - Users wins
+        humanScore = humanScore + 1;
+        return "You win! Rock beats Scissor";
+    } else if (getHumanChoice === "Paper" & getComputerChoice === "Rock") { // User chooses Paper, Computer chooses Rock: (P, R) - User wins
+        humanScore = humanScore + 1;
+        return "You win! Paper beats Rock";
+    } else if (getHumanChoice === "Paper" & getComputerChoice === "Paper") { // Both players choose Paper: (P, P) - , no point added
+        return "Tie! No ones wins";
+
+    }
+}
+
+
+    
     // User chooses Paper, Computer chooses Scissors: (P, S) - Computers wins
     // User chooses Scissors, Computer chooses Rock: (S, R) - Computers wins
     // User chooses Scissors, Computer chooses Paper: (S, P) - User wins
